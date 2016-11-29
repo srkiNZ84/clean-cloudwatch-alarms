@@ -1,0 +1,64 @@
+{
+  "MetricAlarms": [
+    {
+      "EvaluationPeriods": 1,
+      "AlarmArn": "arn:aws:cloudwatch:us-east-1:12345678:alarm:awsec2-i-00757f9b-Low-CPU-Credit-Balance",
+      "StateUpdatedTimestamp": "2016-07-12T02:15:03.005Z",
+      "AlarmConfigurationUpdatedTimestamp": "2016-07-12T01:23:04.520Z",
+      "ComparisonOperator": "LessThanThreshold",
+      "AlarmActions": [
+        "arn:aws:sns:us-east-1:12345678:Warnings"
+      ],
+      "Namespace": "AWS/EC2",
+      "AlarmDescription": "ELK instance CPU",
+      "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2016-07-12T02:15:02.994+0000\",\"statistic\":\"Average\",\"period\":300,\"recentDatapoints\":[],\"threshold\":300.0}",
+      "Period": 300,
+      "StateValue": "INSUFFICIENT_DATA",
+      "Threshold": 300,
+      "AlarmName": "awsec2-i-00757f9b-Low-CPU-Credit-Balance",
+      "Dimensions": [
+        {
+          "Name": "InstanceId",
+          "Value": "i-00757f9b"
+        }
+      ],
+      "Statistic": "Average",
+      "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+      "InsufficientDataActions": [],
+      "OKActions": [],
+      "ActionsEnabled": true,
+      "MetricName": "CPUCreditBalance"
+    },
+    {
+      "EvaluationPeriods": 2,
+      "AlarmArn": "arn:aws:cloudwatch:us-east-1:12345678:alarm:web-VolumeWriteBytes-vol-f4823a65",
+      "StateUpdatedTimestamp": "2016-11-29T22:11:48.196Z",
+      "AlarmConfigurationUpdatedTimestamp": "2016-11-29T21:48:23.468Z",
+      "ComparisonOperator": "LessThanThreshold",
+      "AlarmActions": [
+        "arn:aws:sns:us-east-1:12345678:web-alerts"
+      ],
+      "Namespace": "AWS/EBS",
+      "AlarmDescription": "This alarm is activated on a drop in the size of each write operation on the vol-f4823a65\nvolume, attached to web's i-001e1293 web instance (web01).\nSuch a drop can indicate that the disk is full.",
+      "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2016-11-29T22:11:48.189+0000\",\"statistic\":\"Average\",\"period\":300,\"recentDatapoints\":[],\"threshold\":20480.0}",
+      "Period": 300,
+      "StateValue": "INSUFFICIENT_DATA",
+      "Threshold": 20480,
+      "AlarmName": "web-web-VolumeWriteBytes-vol-f4823a65",
+      "Dimensions": [
+        {
+          "Name": "VolumeId",
+          "Value": "vol-f4823a65"
+        }
+      ],
+      "Statistic": "Average",
+      "StateReason": "Insufficient Data: 2 datapoints were unknown.",
+      "InsufficientDataActions": [],
+      "OKActions": [
+        "arn:aws:sns:us-east-1:12345678:web-alerts"
+      ],
+      "ActionsEnabled": true,
+      "MetricName": "VolumeWriteBytes"
+    }
+  ]
+}
